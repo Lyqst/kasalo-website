@@ -4,7 +4,7 @@ ghpages.publish(
 	'public', // path to public directory
 	{
 		branch: 'gh-pages',
-		repo: 'https://github.com/Lyqst/kasalo-web.git', // Update to point to your repository
+		repo: 'https://github.com/Lyqst/kasalo-website.git', // Update to point to your repository
 		dotfiles: true
 	},
 	() => {
