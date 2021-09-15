@@ -48,3 +48,54 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+:root {
+	--color1: #F1C40F;
+	--color2: #F75C03;
+	--color3: #D90368;
+	--color4: #7E3C87;
+	--color5: #2274A5;
+	--color6: #56A186;
+}
+
+.color1 {
+	background-color: var(--color1) !important;
+}
+
+.color2 {
+	background-color: var(--color2) !important;
+}
+
+.color3 {
+	background-color: var(--color3) !important;
+}
+
+.color4 {
+	background-color: var(--color4) !important;
+}
+
+.color5 {
+	background-color: var(--color5) !important;
+}
+
+.color6 {
+	background-color: var(--color6) !important;
+}
+
+body {
+    background: linear-gradient(-45deg, var(--color1), var(--color2), var(--color3), var(--color4), var(--color5), var(--color6));
+    background-size: 400% 400%;
+    animation: gradient 40s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
