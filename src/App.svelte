@@ -1,44 +1,39 @@
 <script>
-	import "chota";
-	import { Container, Row, Col, Nav } from "svelte-chota";
+	import Grid from "svelte-grid-responsive";
+	import Fullpage from "./Fullpage.svelte";
+	import FullpageSection from "./FullpageSection.svelte";
+	import NavItem from "./NavItem.svelte";
 </script>
 
 <main>
-	<Container bg-primary>
-		<Row>
-			<Col size="1" sizeMD="2"/>
-			<Col size="10" sizeMD="8">
-				<Nav>
-					<svelte:fragment slot="left">
-						<a href="/">Arte</a>
-						<a href="/">Psicologia</a>
-					</svelte:fragment>
-
-					<a slot="center" href="/" class="brand">KASALO</a>
-
-					<svelte:fragment slot="right">
-						<a href="/">Talleres</a>
-						<a href="/">Contacto</a>
-					</svelte:fragment>
-				</Nav>
-			</Col>
-			<Col size="1" sizeMD="2"/>
-		</Row>
-	</Container>
+	<Fullpage>
+		<FullpageSection center>
+			<Grid container>
+				<Grid xs={0} sm={1} md={2} lg={3} />
+				<Grid xs={12} sm={10} md={8} lg={6}>
+					<Grid container>
+						<Grid xs={6} sm={6} md={2}>
+							<NavItem>Arte</NavItem>
+						</Grid>
+						<Grid xs={6} sm={6} md={2}>
+							<NavItem>Psicologia</NavItem>
+						</Grid>
+						<Grid xs={12} sm={12} md={4}>
+							<NavItem brand>KASALO</NavItem>
+						</Grid>
+						<Grid xs={6} sm={6} md={2}>
+							<NavItem>Talleres</NavItem>
+						</Grid>
+						<Grid xs={6} sm={6} md={2}>
+							<NavItem>Contacto</NavItem>
+						</Grid>
+					</Grid>
+				</Grid>
+				<Grid xs={0} sm={1} md={2} lf={3} />
+			</Grid>
+		</FullpageSection>
+	</Fullpage>
 </main>
 
 <style>
-    :global(:root) {
-        --color-primary: #14854F;
-        --color-lightGrey: #d2d6dd;
-        --color-grey: #747681;
-        --color-darkGrey: #3f4144;
-        --color-error: #d43939;
-        --color-success: #28bd14;
-        --grid-maxWidth: 120rem;
-        --grid-gutter: 2rem;
-        --font-size: 1.6rem;
-        --font-family: "Optima", sans-serif;
-    }
 </style>
-
