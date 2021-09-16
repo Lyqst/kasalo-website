@@ -1,4 +1,8 @@
-<div class="fullpage-wrapper">
+<script>
+    export let type = "";
+</script>
+
+<div class="fullpage-wrapper {type}">
     <div class="fullpage-container">
         <slot />
     </div>

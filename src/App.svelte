@@ -5,35 +5,41 @@
 	import NavItem from "./NavItem.svelte";
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet"> 
+</svelte:head>
+
 <main>
-	<Fullpage>
-		<FullpageSection center>
-			<div class="nav">
-				<Grid container>
-					<Grid xs={0} sm={1} md={2} lg={3} />
-					<Grid xs={12} sm={10} md={8} lg={6}>
-						<Grid container>
-							<Grid xs={6} sm={6} md={2}>
-								<NavItem>Arte</NavItem>
-							</Grid>
-							<Grid xs={6} sm={6} md={2}>
-								<NavItem>Psicologia</NavItem>
-							</Grid>
-							<Grid xs={12} sm={12} md={4}>
-								<NavItem brand>KASALO</NavItem>
-							</Grid>
-							<Grid xs={6} sm={6} md={2}>
-								<NavItem>Talleres</NavItem>
-							</Grid>
-							<Grid xs={6} sm={6} md={2}>
-								<NavItem>Contacto</NavItem>
+	<Fullpage type="nav-container">
+			<FullpageSection center>
+				<div class="nav">
+					<Grid container>
+						<Grid xs={0} sm={1} md={2} lg={3} />
+						<Grid xs={12} sm={10} md={8} lg={6}>
+							<Grid container>
+								<Grid xs={6} sm={6} md={2}>
+									<NavItem>Arte</NavItem>
+								</Grid>
+								<Grid xs={6} sm={6} md={2}>
+									<NavItem>Psicologia</NavItem>
+								</Grid>
+								<Grid xs={12} sm={12} md={4}>
+									<NavItem brand>KASALO</NavItem>
+								</Grid>
+								<Grid xs={6} sm={6} md={2}>
+									<NavItem>Talleres</NavItem>
+								</Grid>
+								<Grid xs={6} sm={6} md={2}>
+									<NavItem>Contacto</NavItem>
+								</Grid>
 							</Grid>
 						</Grid>
+						<Grid xs={0} sm={1} md={2} lg={3} />
 					</Grid>
-					<Grid xs={0} sm={1} md={2} lg={3} />
-				</Grid>
-			</div>
-		</FullpageSection>
+				</div>
+			</FullpageSection>
 	</Fullpage>
 </main>
 

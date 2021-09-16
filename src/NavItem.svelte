@@ -7,26 +7,26 @@
     function toggleHoverIn() {
         if (!brand) {
             hover = true;
-            color = Math.floor(Math.random() * 6 + 1);
+            color += 1;
+            if (color > 5) color = 1;
         }
     }
 
     function toggleHoverOut() {
         hover = false;
     }
-
 </script>
 
 <div class="navitem-container">
     <div
+        class="navitem"
         class:hover
         class:brand
-        class:color1="{hover && color == 1}"
-        class:color2="{hover && color == 2}"
-        class:color3="{hover && color == 3}"
-        class:color4="{hover && color == 4}"
-        class:color5="{hover && color == 5}"
-        class:color6="{hover && color == 6}"
+        class:color1={hover && color == 1}
+        class:color2={hover && color == 2}
+        class:color3={hover && color == 3}
+        class:color4={hover && color == 4}
+        class:color5={hover && color == 5}
         on:mouseenter={toggleHoverIn}
         on:mouseleave={toggleHoverOut}
     >
@@ -35,20 +35,21 @@
 </div>
 
 <style>
-    div {
+    .navitem {
         background-color: rgba(255, 255, 255, 0);
         transition: 0.15s ease;
         border-radius: 50%;
-        height: 214px;
-        width: 214px;
+        height: 164px;
+        width: 164px;
         display: flex;
         align-items: center;
     }
 
     a {
         color: lavender;
-        font-size: 24px;
+        font-size: 26px;
         width: inherit;
+        font-weight: bold;
         text-decoration: none;
         text-align: center;
         transition: 0.15s ease;
@@ -63,12 +64,15 @@
 
     .hover {
         animation: hoverAnim 4s ease-in-out 0.15s infinite;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05),
+            0 6px 20px 0 rgba(0, 0, 0, 0.02);
         z-index: 2;
     }
 
     .hover a {
         color: lavender;
-        transform: scale(1.3);
+        transform: scale(1.1);
+        animation: hoverAnimText 4s ease-in-out 0.15s infinite;
     }
 
     @keyframes hoverAnim {
@@ -76,44 +80,41 @@
             transform: scale(1);
         }
         50% {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         100% {
             transform: scale(1);
         }
     }
 
+    @keyframes hoverAnimText {
+        0% {
+            transform: scale(1.1);
+        }
+        50% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
     .brand {
-        background: lavender;
+        background: linear-gradient(
+            -45deg,
+            var(--color1),
+            var(--color2),
+            var(--color3),
+            var(--color4),
+            var(--color5)
+        );
+        background-size: 400% 400%;
+        animation: gradient 30s linear infinite;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05),
+            0 6px 20px 0 rgba(0, 0, 0, 0.02);
     }
 
     .brand a {
-        animation: brandBg infinite 20s cubic-bezier(1, 0, 0.35, 0.9);
         font-size: 38px;
     }
-    
-    @keyframes brandBg {
-        0% {
-            color: var(--color1);
-        }
-        16% {
-            color: var(--color2);
-        }
-        33% {
-            color: var(--color3);
-        }
-        50% {
-            color: var(--color4);
-        }
-        66% {
-            color: var(--color5);
-        }
-        83% {
-            color: var(--color6);
-        }
-        100% {
-            color: var(--color1);
-        }
-    }
-
 </style>
