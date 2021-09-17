@@ -9,7 +9,7 @@ body {
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
-	font-family: Cinzel;
+	font-family: 'Alata', sans-serif;
 }
 
 label {
@@ -58,23 +58,23 @@ button:focus {
 }
 
 .color1 {
-	background-color: var(--color1) !important;
+	background: var(--color1) !important;
 }
 
 .color2 {
-	background-color: var(--color2) !important;
+	background: var(--color2) !important;
 }
 
 .color3 {
-	background-color: var(--color3) !important;
+	background: var(--color3) !important;
 }
 
 .color4 {
-	background-color: var(--color4) !important;
+	background: var(--color4) !important;
 }
 
 .color5 {
-	background-color: var(--color5) !important;
+	background: var(--color5) !important;
 }
 
 .color1-gradient {
@@ -95,12 +95,6 @@ button:focus {
 
 .color5-gradient {
 	background: linear-gradient(-45deg, var(--color5), rgba(255, 255, 255, .3));
-}
-
-.nav-container {
-	background: linear-gradient(-45deg, var(--color1), var(--color2), var(--color3), var(--color4), var(--color5));
-	background-size: 250% 250%;
-	animation: gradient 30s ease-in-out infinite;
 }
 
 @keyframes gradient {
