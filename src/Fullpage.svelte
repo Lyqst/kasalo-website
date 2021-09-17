@@ -1,8 +1,6 @@
-<script>
-    export let type = "";
-</script>
-
-<div class="fullpage-wrapper {type}">
+<div
+    class="fullpage-wrapper"
+>
     <div class="fullpage-container">
         <slot />
     </div>
@@ -18,6 +16,17 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+        transition: 2s ease;
+        background: linear-gradient(
+            -45deg,
+            var(--color1),
+            var(--color2),
+            var(--color3),
+            var(--color4),
+            var(--color5)
+        );
+        background-size: 250% 250%;
+        animation: gradient 30s ease-in-out infinite;
     }
     .fullpage-container {
         height: inherit;

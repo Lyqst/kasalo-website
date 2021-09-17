@@ -1,33 +1,42 @@
 <script>
-    export let center = false;
+    import { slide } from "svelte/transition";
+    import { cubicOut } from "svelte/easing";
+    export let landing;
 </script>
 
 <section>
+    {#if landing}
+        <div
+            class="landing-top-space"
+            transition:slide={{ duration: 900, easing: cubicOut }}
+        />
+    {/if}
     <div
-        class="fullpage-container fullpage-flexbox-expand"
-        class:fullpage-flexbox-center={center}
+        class="section-container section-flexbox-expand"
+        class:section-landing={landing}
+        class:section-content={!landing}
     >
         <slot />
     </div>
 </section>
-ç
 
 <style>
     section {
         height: inherit;
         position: relative;
     }
-    .fullpage-flexbox-expand {
+    .section-flexbox-expand {
         flex: 1;
     }
-    .fullpage-container {
+    .section-container {
         height: inherit;
         width: inherit;
         position: relative;
-    }
-    .fullpage-flexbox-center {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .landing-top-space {
+        height: 33%;
     }
 </style>

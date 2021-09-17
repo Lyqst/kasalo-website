@@ -1,8 +1,10 @@
 <script>
     export let brand = false;
-    let hover = false;
+    export let landing;
+    export let contentBgColor;
 
     let color = 1;
+    let hover = false;
 
     function toggleHoverIn() {
         if (!brand) {
@@ -14,6 +16,12 @@
 
     function toggleHoverOut() {
         hover = false;
+    }
+
+    function handleClick() {
+        landing = brand;
+        if (landing) contentBgColor = 0;
+        else contentBgColor = color;
     }
 </script>
 
@@ -29,8 +37,9 @@
         class:color5={hover && color == 5}
         on:mouseenter={toggleHoverIn}
         on:mouseleave={toggleHoverOut}
+        on:click={handleClick}
     >
-        <a href="/"><slot /></a>
+        <a href="/#"><slot /></a>
     </div>
 </div>
 
